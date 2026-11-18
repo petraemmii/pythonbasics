@@ -1,4 +1,4 @@
-# Smart Home Hub System (CLI)
+﻿# Smart Home Hub System (CLI)
 
 **Course:** Ohjelmoinnin perusteet (Basics of Programming)  
 **Author:** Petra Paavola  
@@ -8,7 +8,7 @@
 ## 1. Project Overview & Idea
 
 ### What is this application?
-The **Smart Home Hub System** is an interactive command-line application that simulates a centralized home automation controller. Users can monitor and control smart devices across multiple rooms (such as lights, thermostats, smart locks, and security cameras), activate pre-configured scenes (e.g., *"Night Mode"* or *"Away Mode"*), and view real-time energy consumption summaries.
+The **Smart Home Hub System** is an interactive command-line application that simulates a centralized smart home automation controller. Users can monitor and control smart devices across multiple rooms (such as lights, thermostats, smart locks, and security cameras), activate pre-configured scenes (e.g., *"Night Mode"* or *"Away Mode"*), and view real-time energy consumption summaries.
 
 ### Key Features
 - **Room-by-Room Device Control:** Toggle smart lights, adjust thermostat temperatures, and lock or unlock doors in specific rooms.
@@ -33,25 +33,39 @@ Built in **Python 3**, the program separates responsibilities into clean, modula
 ### Installation & Startup
 1. Clone this repository to your local machine:
    ```bash
-   git clone [https://github.com/petraemmii/pythonbasics]
-Navigate into the project directory:
+   git clone [https://github.com/petraemmii/pythonbasics.git](https://github.com/petraemmii/pythonbasics.git)
+   ```
+2. Navigate into the project directory:
+   ```bash
+   cd pythonbasics
+   ```
+3. Launch the application from the terminal (use `python3` on macOS/Linux if needed):
+   ```bash
+   python main.py
+   ```
 
-Bash
-cd pythonbasics
-Launch the application from the terminal (use python3 on macOS/Linux if needed):
+---
 
-Bash
-python main.py
-3. Program Logic (Flowchart)
+## 3. Program Logic (Flowchart)
+
 The flowchart below illustrates the main menu loop, user input validation, device/scene control branches, and exit flow:
 
-4. Video Demonstration
+![Smart Home Hub Flowchart](docs/flowchart.png)
+
+---
+
+## 4. Video Demonstration
+
 Watch a walkthrough of the Smart Home Hub in action along with a review of the source code structure:
 
-YouTube Video Demo: [Watch the Demo Video Here]([Insert your YouTube link here])
+- **YouTube Video Demo:** [Watch the Demo Video Here]([Insert your YouTube link here])
 
-5. Code Documentation (PyDoc - Bonus)
-Every function in the codebase is documented using standard Python docstrings. The HTML documentation was generated with PyDoc and is included in the repository (docs/main.html), or can be regenerated via terminal:
+---
 
-Bash
+## 5. Code Documentation (PyDoc - Bonus)
+
+Every function in the codebase is documented using standard Python `docstrings`. The HTML documentation was generated with PyDoc and is included in the repository (`docs/main.html`), or can be regenerated via terminal:
+
+```bash
 python -m pydoc -w main
+```
