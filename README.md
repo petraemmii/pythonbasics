@@ -64,8 +64,10 @@ Watch a walkthrough of the Smart Home Hub in action along with a review of the s
 
 ## 5. Code Documentation (PyDoc - Bonus)
 
-Every function in the codebase is documented using standard Python `docstrings`. The HTML documentation was generated with PyDoc and is included in the repository (`docs/main.html`), or can be regenerated via terminal:
-
+Every function in the codebase is documented using standard Python `docstrings`. The HTML documentation was generated with PyDoc and is included in the repository (`main.html`), or can be regenerated via terminal:
 ```bash
 python -m pydoc -w main
 ```
+## Acknowledgments
+
+The initial idea for a console-based Smart Home Hub simulator came from a conversation with a friend. The flowchart, Python implementation, and documentation were designed and built independently for this course project.
