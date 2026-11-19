@@ -2,10 +2,16 @@
 
 A console-based home automation controller that lets users monitor room
 devices, calculate live energy consumption, control individual switches,
-locks, and thermostats, trigger automation scenes, and review a session log.
+locks and thermostats, trigger automation scenes and review a session log.
 """
 
 def activate_scene(home, event_log):
+    """Apply a multi-room automation preset and record the action.
+
+    Args:
+        home (dict): Nested dictionary storing all rooms and their devices.
+        event_log (list): List of strings recording actions taken during the session.
+    """
     print("\n--- Automation Scenes ---")
     print("1. Night Mode (Lights OFF, Heating 18°C, Doors LOCKED)")
     print("2. Away Mode (All switches OFF, Heating 16°C, Doors LOCKED)")
@@ -13,7 +19,7 @@ def activate_scene(home, event_log):
 
     scene = input("Select a scene (1-3): ").strip()
 
-# Night Mode: turn off all switches, lower heating to 18°C, and lock doors
+# Night Mode: turn off all switches, lower heating to 18°C and lock doors
     if scene == "1":
         for devices in home.values():
             for info in devices.values():
@@ -27,7 +33,7 @@ def activate_scene(home, event_log):
         print(message)
         event_log.append(message)
 
-# Away Mode: turn off all switches, set eco heating to 16°C, and lock doors
+# Away Mode: turn off all switches, set eco heating to 16°C and lock doors
     elif scene == "2":
         for devices in home.values():
             for info in devices.values():
@@ -41,7 +47,7 @@ def activate_scene(home, event_log):
         print(message)
         event_log.append(message)
 
-# Morning Mode: warm home to 21°C, unlock front door, and turn on main lights
+# Morning Mode: warm home to 21°C, unlock front door and turn on main lights
     elif scene == "3":
         for devices in home.values():
             for info in devices.values():
@@ -84,7 +90,7 @@ def calculate_total_watts(home):
 
 
 def display_dashboard(home):
-    """Print the current status of every room, device, and total power usage.
+    """Print the current status of every room, device and total power usage.
 
     Args:
         home (dict): Nested dictionary storing all rooms and their devices.
@@ -170,6 +176,12 @@ def control_device(home, event_log):
 
 
 def display_event_log(event_log):
+    """Display all actions recorded during the current session.
+
+    Args:
+        event_log (list): List of strings recording actions taken during the session.
+    """
+    print("\n===============================")
     print("\n===============================")
     print("       SESSION EVENT LOG")
     print("===============================")
@@ -181,7 +193,7 @@ def display_event_log(event_log):
     print("===============================")
 def main():
     """Initialize smart home state and run the interactive main menu loop."""
-    # Nested dictionary storing rooms, devices, states, and power ratings (watts)
+    # Nested dictionary storing rooms, devices, states and power ratings (watts)
     home = {
         "living room": {
             "lights": {"type": "switch", "state": True, "watts": 45},
